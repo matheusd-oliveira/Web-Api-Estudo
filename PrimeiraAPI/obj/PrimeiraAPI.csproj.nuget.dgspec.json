@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CursoFilipeBritoDev\\PrimeiraAPI\\PrimeiraAPI\\PrimeiraAPI.csproj": {}
+    "D:\\Desenvolvimento de Software\\Curso Fillipe Britto Apis Youtube\\Web-Api-Estudo\\PrimeiraAPI\\PrimeiraAPI.csproj": {}
   },
   "projects": {
-    "D:\\CursoFilipeBritoDev\\PrimeiraAPI\\PrimeiraAPI\\PrimeiraAPI.csproj": {
+    "D:\\Desenvolvimento de Software\\Curso Fillipe Britto Apis Youtube\\Web-Api-Estudo\\PrimeiraAPI\\PrimeiraAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CursoFilipeBritoDev\\PrimeiraAPI\\PrimeiraAPI\\PrimeiraAPI.csproj",
+        "projectUniqueName": "D:\\Desenvolvimento de Software\\Curso Fillipe Britto Apis Youtube\\Web-Api-Estudo\\PrimeiraAPI\\PrimeiraAPI.csproj",
         "projectName": "PrimeiraAPI",
-        "projectPath": "D:\\CursoFilipeBritoDev\\PrimeiraAPI\\PrimeiraAPI\\PrimeiraAPI.csproj",
+        "projectPath": "D:\\Desenvolvimento de Software\\Curso Fillipe Britto Apis Youtube\\Web-Api-Estudo\\PrimeiraAPI\\PrimeiraAPI.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "D:\\CursoFilipeBritoDev\\PrimeiraAPI\\PrimeiraAPI\\obj\\",
+        "outputPath": "D:\\Desenvolvimento de Software\\Curso Fillipe Britto Apis Youtube\\Web-Api-Estudo\\PrimeiraAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,6 +56,14 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.25, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -107,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

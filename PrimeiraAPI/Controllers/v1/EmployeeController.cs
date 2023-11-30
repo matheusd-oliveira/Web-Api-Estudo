@@ -4,10 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using PrimeiraAPI.Application.ViewModel;
 using PrimeiraAPI.Domain.Model.EmployeeAggregate;
 
-namespace PrimeiraAPI.Controllers
+namespace PrimeiraAPI.Controllers.v1
 {
     [ApiController]
-    [Route("api/v1/employee")]
+    [Route("api/v{version:apiVersion}/employee")]
+    [ApiVersion("1.0")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
@@ -40,7 +41,7 @@ namespace PrimeiraAPI.Controllers
             return Ok();
         }
 
-        
+
         [HttpGet]
         public IActionResult Get(int pageNumber, int pageQuantity)
         {

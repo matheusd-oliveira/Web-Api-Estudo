@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using PrimeiraAPI;
 using PrimeiraAPI.Application.Mapping;
+using PrimeiraAPI.Application.Swagger;
 using PrimeiraAPI.Domain.Model.EmployeeAggregate;
 using PrimeiraAPI.Infrastructure.Repositories;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,10 +24,23 @@ builder.Services.AddAutoMapper(typeof(DomainToDTOMapping));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+// Adicionando Versionamento da Microsoft.
+builder.Services.AddApiVersioning(o =>
+{
+    o.AssumeDefaultVersionWhenUnspecified = true;
+    o.DefaultApiVersion = new ApiVersion(1, 0);
+
+});
+
+builder.Services.AddVersionedApiExplorer(setup =>
+{
+    setup.GroupNameFormat = "'v'VVV";
+    setup.SubstituteApiVersionInUrl = true;
+});
 #region Configuração do Swagger
 builder.Services.AddSwaggerGen(c =>
 {
-    // c.OperationFilter<SwaggerDefaultValues>();
+    c.OperationFilter<SwaggerDefaultValues>();
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
@@ -56,6 +74,7 @@ builder.Services.AddSwaggerGen(c =>
 
 #region Injeção de Dependência
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerGenOptions>();
 #endregion
 
 #region Utilização do JWT para Autenticação com o TOKEN
@@ -81,7 +100,8 @@ builder.Services.AddAuthentication(x =>
 #endregion
 
 var app = builder.Build();
-
+// Pegando a descrição da versão.
+var versionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 // Configure the HTTP request pipeline.
 // Configurando o erro que vai aparecer de acordo com o ambiente .
 #region Tratamento de erro
@@ -89,7 +109,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/error-development");
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        foreach (var description in versionDescriptionProvider.ApiVersionDescriptions)
+        {
+            options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
+                $"Web APi - {description.GroupName.ToUpper()}");
+        }
+    });
 }
 else
 {

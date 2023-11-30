@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "kFK2zkncB+KBvfD1D4eHGv7rpHPdWEWd2cAhuhA2jo7w0OIElXf28bxljPIhyU23iHEfhXyNS0TTX66k73Acmw==",
+  "dgSpecHash": "7/OuZPgYjSpibtO7/L9rF8CDWIwzjwEr+dP47KM5g+Xf+q+NQ+PgAhSZ4fWlBClvYvUgie2rY1li2+u0xSqh/w==",
   "success": true,
-  "projectFilePath": "D:\\CursoFilipeBritoDev\\PrimeiraAPI\\PrimeiraAPI\\PrimeiraAPI.csproj",
+  "projectFilePath": "D:\\Desenvolvimento de Software\\Curso Fillipe Britto Apis Youtube\\Web-Api-Estudo\\PrimeiraAPI\\PrimeiraAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.25\\microsoft.aspnetcore.authentication.jwtbearer.6.0.25.nupkg.sha512",
+    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\mathe\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.0\\microsoft.entityframeworkcore.7.0.0.nupkg.sha512",

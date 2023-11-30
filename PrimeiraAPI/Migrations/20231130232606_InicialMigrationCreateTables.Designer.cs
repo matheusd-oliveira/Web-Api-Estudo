@@ -11,8 +11,8 @@ using PrimeiraAPI.Infrastructure;
 namespace PrimeiraAPI.Migrations
 {
     [DbContext(typeof(ConnectionContext))]
-    [Migration("20231121011536_SecondMigration")]
-    partial class SecondMigration
+    [Migration("20231130232606_InicialMigrationCreateTables")]
+    partial class InicialMigrationCreateTables
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
